@@ -1,0 +1,21 @@
+[Unit]
+Description=Bot de Monitoramento de BTC via Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=btcbot
+WorkingDirectory=/opt/btc_alert_bot
+EnvironmentFile=/opt/btc_alert_bot/.env
+ExecStart=/usr/bin/python3 /opt/btc_alert_bot/src/main.py
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+# Limites de recursos (opcional — hardware limitado)
+MemoryMax=128M
+CPUQuota=20%
+
+[Install]
+WantedBy=multi-user.target

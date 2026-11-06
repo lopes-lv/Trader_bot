@@ -1,0 +1,46 @@
+# Segredos / credenciais
+.env
+.env.*
+!.env.example
+*.env.txt
+
+# Dados sensíveis do bot (tokens, chat ids, histórico)
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+
+# Sistema operacional / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Docker
+*.pid
+
+# Pacote do pendrive
+pacote_tvbox/
+pacote_tvbox.zip
+
+# Arquivos fora do escopo do repositório
+CLAUDE.md
+lista_tarefas.md
+o-que-e-jev.md
+tests/
+docs/
+deploy/

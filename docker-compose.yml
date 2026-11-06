@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  btc_bot:
+    build: .
+    container_name: btc_alert_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Isso salva o banco de dados na sua máquina real, 
+      # garantindo que você não perca seu histórico se o container for deletado.
+      - ./data:/app/data
+    environment:
+      # Atualizamos o caminho do DB para dentro da pasta mapeada no volume
+      - DB_PATH=/app/data/btc_bot.db
